@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Itens{% endblock %}
+{% block content %}
+  <h2>Objetos no Acervo</h2>
+  {% if objetos %}
+    <div class="grid">
+    {% for obj in objetos %}
+      <article class="objeto-card">
+        <header>
+          <h3>{{ obj['nome'] }}</h3>
+          <span class="tag">{{ obj['categoria'] }}</span>
+        </header>
+        <p>{{ obj['descricao'] }}</p>
+        <p><strong>Valor estimado:</strong> R$ {{ obj['valor_estimado'] }}</p>
+        <div class="meta">Adicionado por {{ obj['username'] }} em {{ obj['data_aquisicao'].strftime('%d/%m/%Y') }}</div>
+        {% if g.user and g.user['id'] == obj['usuario_id'] %}
+          <a class="action" href="{{ url_for('colecao.editar', id=obj['id']) }}">Editar / Excluir</a>
+        {% endif %}
+      </article>
+    {% endfor %}
+    </div>
+  {% else %}
+    <p>Nenhum objeto cadastrado ainda.</p>
+  {% endif %}
+{% endblock %}

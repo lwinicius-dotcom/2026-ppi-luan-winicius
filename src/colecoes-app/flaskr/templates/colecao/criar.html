@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Novo Objeto{% endblock %}
+{% block content %}
+  <form method="post">
+    <h2>Adicionar Objeto à Coleção</h2>
+    <label for="nome">Nome do Objeto</label>
+    <input name="nome" id="nome" required>
+    
+    <label for="categoria">Categoria (ex: Moeda, Action Figure, Livro)</label>
+    <input name="categoria" id="categoria" required>
+    
+    <label for="descricao">Descrição / Estado de Conservação</label>
+    <textarea name="descricao" id="descricao"></textarea>
+    
+    <label for="valor_estimado">Valor Estimado (R$)</label>
+    <input type="number" step="0.01" name="valor_estimado" id="valor_estimado">
+    
+    <input type="submit" value="Salvar Objeto">
+  </form>
+{% endblock %}

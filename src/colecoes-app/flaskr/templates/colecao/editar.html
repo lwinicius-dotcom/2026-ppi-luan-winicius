@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Editar "{{ objeto['nome'] }}"{% endblock %}
+{% block content %}
+  <form method="post">
+    <h2>Editar Item</h2>
+    <label for="nome">Nome do Objeto</label>
+    <input name="nome" id="nome" value="{{ objeto['nome'] }}" required>
+    
+    <label for="categoria">Categoria</label>
+    <input name="categoria" id="categoria" value="{{ objeto['categoria'] }}" required>
+    
+    <label for="descricao">Descrição</label>
+    <textarea name="descricao" id="descricao">{{ objeto['descricao'] }}</textarea>
+    
+    <label for="valor_estimado">Valor Estimado (R$)</label>
+    <input type="number" step="0.01" name="valor_estimado" id="valor_estimado" value="{{ objeto['valor_estimado'] }}">
+    
+    <input type="submit" value="Atualizar">
+  </form>
+  <hr>
+  <form action="{{ url_for('colecao.deletar', id=objeto['id']) }}" method="post">
+    <input class="danger" type="submit" value="Excluir Objeto Permanentemente" onclick="return confirm('Tem certeza que deseja excluir?');">
+  </form>
+{% endblock %}
