@@ -1,0 +1,175 @@
+/* Configurações Gerais e Tipografia */
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f9;
+    padding: 2rem;
+    color: #333;
+}
+
+body {
+    max-width: 850px;
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+h2 {
+    margin: 0 0 0.5rem 0;
+    color: #34495e;
+}
+
+/* Barra de Navegação */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e50;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+    color: #fff;
+}
+
+/* Estilização dos Itens da Coleção (Posts) */
+.post {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.post header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f2f5;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.post .about {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+}
+
+.post .body {
+    white-space: pre-line;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Formulários */
+form {
+    display: grid;
+    gap: 1.2rem;
+    max-width: 500px;
+    background: #fafbfc;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: -0.5rem;
+    color: #2c3e50;
+}
+
+input, textarea, select {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+}
+
+input:focus, textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 4px rgba(52, 152, 219, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Botões e Ações */
+input[type="submit"], .action {
+    background: #3498db;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+input[type="submit"]:hover, .action:hover {
+    background: #2980b9;
+}
+
+.action {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+}
+
+input.danger, .danger {
+    background: #e74c3c;
+}
+
+input.danger:hover, .danger:hover {
+    background: #c0392b;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e1e4e8;
+    margin: 1.5rem 0;
+}
