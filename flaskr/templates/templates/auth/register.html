@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastrar Novo Colecionador{% endblock %}
+
+{% block content %}
+  <h2>Criar Conta de Colecionador</h2>
+  <p>Cadastre-se para começar a gerenciar seus itens e coleções de forma organizada.</p>
+  
+  <form method="post">
+    <label for="username">Nome de Usuário</label>
+    <input name="username" id="username" placeholder="Ex: luan_winicius" required>
+    
+    <label for="password">Senha</label>
+    <input type="password" name="password" id="password" required>
+    
+    <input type="submit" value="Criar Minha Conta">
+  </form>
+{% endblock %}

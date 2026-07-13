@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock %} - Coleções</title>
+  <style>
+    body { font-family: sans-serif; background: #fafafa; padding: 20px; margin: 0; }
+    nav { background: #2c3e50; padding: 15px 20px; color: white; display: flex; justify-content: space-between; align-items: center; }
+    nav h1 { margin: 0; font-size: 1.5rem; }
+    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .content { background: white; padding: 30px; margin: 20px auto; max-width: 800px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    label { display: block; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
+    input { display: block; width: 100%; max-width: 400px; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    input[type=submit] { background: #2980b9; color: white; border: none; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+    input[type=submit]:hover { background: #2471a3; }
+    .flash { background: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 20px; border-radius: 4px; border: 1px solid #f5c6cb; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h1>📦 Meu Acervo de Coleções</h1>
+  <div>
+    {% if g.user %}
+      <span>Olá, <b>{{ g.user['username'] }}</b></span>
+      <a href="{{ url_for('auth.logout') }}">Sair</a>
+    {% else %}
+      <a href="{{ url_for('auth.register') }}">Cadastrar-se</a>
+      <a href="{{ url_for('auth.login') }}">Entrar</a>
+    {% endif %}
+  </div>
+</nav>
+
+<section class="content">
+  <!-- Exibe mensagens de erro ou sucesso na tela -->
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  
+  {% block content %}{% endblock %}
+</section>
+
+</body>
+</html>
