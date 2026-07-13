@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS objeto;
+
+CREATE TABLE user (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL
+);
+
+CREATE TABLE objeto (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  usuario_id INTEGER NOT NULL,
+  nome TEXT NOT NULL,
+  categoria TEXT NOT NULL,
+  descricao TEXT,
+  data_aquisicao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  valor_estimado REAL,
+  FOREIGN KEY (usuario_id) REFERENCES user (id)
+);
